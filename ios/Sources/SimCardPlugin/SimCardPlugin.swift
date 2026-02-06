@@ -1,23 +1,40 @@
 import Foundation
 import Capacitor
+import CoreTelephony
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(SimCardPlugin)
-public class SimCardPlugin: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "SimCardPlugin"
-    public let jsName = "SimCard"
-    public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
-    ]
-    private let implementation = SimCard()
+public class SimCardPlugin: CAPPlugin {
+    @objc func getSimCards(_ call: CAPPluginCall) {
+        if let carrierCollection = CTTelephonyNetworkInfo().serviceSubscriberCellularProviders {
+            var carrierInfoCollection: [[String: Any]] = []
+            for (_, carrier) in carrierCollection {
+                carrierInfoCollection.append([
+                    "allowsVOIP": carrier.allowsVOIP,
+                    "carrierName": carrier.carrierName ?? "",
+                    "isoCountryCode": carrier.isoCountryCode ?? "",
+                    "mobileCountryCode": carrier.mobileCountryCode ?? "",
+                    "mobileNetworkCode": carrier.mobileNetworkCode ?? ""
+                ])
+            }
+            call.resolve([
+                "simCards": carrierInfoCollection
+            ])
+        } else {
+            call.resolve([
+                "simCards": [] as NSArray
+            ])
+        }
+    }
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc override public func checkPermissions(_ call: CAPPluginCall) {
         call.resolve([
-            "value": implementation.echo(value)
+            "readSimCard": "granted"
+        ])
+    }
+
+    @objc override public func requestPermissions(_ call: CAPPluginCall) {
+        call.resolve([
+            "readSimCard": "granted"
         ])
     }
 }

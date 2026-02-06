@@ -1,10 +1,11 @@
 import { registerPlugin } from '@capacitor/core';
+import type { GetSimCards } from './definitions';
 
-import type { SimCardPlugin } from './definitions';
+export interface SimCardPlugin {
+  getSimCards(): Promise<GetSimCards>;
+}
 
-const SimCard = registerPlugin<SimCardPlugin>('SimCard', {
-  web: () => import('./web').then((m) => new m.SimCardWeb()),
-});
+const SimCard = registerPlugin<SimCardPlugin>('SimCard');
 
 export * from './definitions';
 export { SimCard };
