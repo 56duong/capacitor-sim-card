@@ -1,4 +1,4 @@
-package com.56duong.capacitorsimcard;
+package com._56duong.capacitorsimcard;
 
 import com.getcapacitor.Logger;
 

@@ -1,4 +1,4 @@
-package com.56duong.capacitorsimcard;
+package com._56duong.capacitorsimcard;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
