@@ -39,10 +39,10 @@ async function getSimCards() {
 ### getSimCards()
 
 ```typescript
-getSimCards() => Promise<{ simCards: SimCardInfo[]; }>
+getSimCards() => Promise<SimCardInfo[]>
 ```
 
-**Returns:** <code>Promise&lt;{ simCards: SimCardInfo[]; }&gt;</code>
+**Returns:** <code>Promise&lt;SimCardInfo[]&gt;</code>
 
 --------------------
 

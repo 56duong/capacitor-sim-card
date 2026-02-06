@@ -28,7 +28,5 @@ export interface SimCardInfo {
     mobileNetworkCode: string;
 }
 export interface SimCardPlugin {
-    getSimCards(): Promise<{
-        simCards: SimCardInfo[];
-    }>;
+    getSimCards(): Promise<SimCardInfo[]>;
 }
