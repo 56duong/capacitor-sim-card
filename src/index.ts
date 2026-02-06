@@ -5,7 +5,7 @@ export interface SimCardPlugin {
   /**
    * Get information from device's sim cards.
    */
-  getSimCards(): Promise<SimCardInfo[]>;
+  getSimCards(): Promise<{ simCards: SimCardInfo[] }>;
 }
 
 const SimCard = registerPlugin<SimCardPlugin>('SimCard');
