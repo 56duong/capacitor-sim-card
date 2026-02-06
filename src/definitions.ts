@@ -29,5 +29,5 @@ export interface SimCardInfo {
 }
 
 export interface SimCardPlugin {
-  getSimCards(): Promise<SimCardInfo[]>;
+  getSimCards(): Promise<{ simCards: SimCardInfo[] }>;
 }

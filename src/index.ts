@@ -1,14 +1,15 @@
 import { registerPlugin } from '@capacitor/core';
-import type { SimCardInfo } from './definitions';
+import type { SimCardPlugin, SimCardInfo } from './definitions';
 
-export interface SimCardPlugin {
+const _SimCard = registerPlugin<SimCardPlugin>('SimCard');
+
+export const SimCard = {
   /**
    * Get information from device's sim cards.
    */
-  getSimCards(): Promise<SimCardInfo[]>;
-}
-
-const SimCard = registerPlugin<SimCardPlugin>('SimCard');
-
-export * from './definitions';
-export { SimCard };
+  async getSimCards(): Promise<SimCardInfo[]> {
+    const result = await _SimCard.getSimCards();
+    // If result.simCards exists, return it; else assume it's already an array
+    return Array.isArray(result) ? result : result.simCards;
+  }
+};

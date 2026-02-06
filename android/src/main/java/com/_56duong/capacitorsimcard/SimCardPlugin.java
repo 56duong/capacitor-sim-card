@@ -88,7 +88,10 @@ public class SimCardPlugin extends Plugin {
             }
         }
 
-        call.resolve(carrierInfoCollection);
+        JSObject ret = new JSObject();
+        ret.put("simCards", carrierInfoCollection);
+
+        call.resolve(ret);
     }
 
     @PermissionCallback
