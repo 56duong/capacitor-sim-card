@@ -59,7 +59,6 @@ public class SimCardPlugin extends Plugin {
             for (SubscriptionInfo subscriptionInfo : subscriptionInfoList) {
                 JSObject carrierInfo = new JSObject();
 
-                @SuppressLint("MissingPermission")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     // getPhoneNumber requires API 33+
                     try {

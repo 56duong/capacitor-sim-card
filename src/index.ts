@@ -1,8 +1,11 @@
 import { registerPlugin } from '@capacitor/core';
-import type { GetSimCards } from './definitions';
+import type { SimCardInfo } from './definitions';
 
 export interface SimCardPlugin {
-  getSimCards(): Promise<GetSimCards>;
+  /**
+   * Get information from device's sim cards.
+   */
+  getSimCards(): Promise<SimCardInfo[]>;
 }
 
 const SimCard = registerPlugin<SimCardPlugin>('SimCard');
