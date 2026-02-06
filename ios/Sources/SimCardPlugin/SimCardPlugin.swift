@@ -16,9 +16,13 @@ public class SimCardPlugin: CAPPlugin {
                     "mobileNetworkCode": carrier.mobileNetworkCode ?? ""
                 ])
             }
-            call.resolve(carrierInfoCollection)
+            call.resolve([
+                "simCards": carrierInfoCollection
+            ])
         } else {
-            call.resolve([])
+            call.resolve([
+                "simCards": [] as NSArray
+            ])
         }
     }
 

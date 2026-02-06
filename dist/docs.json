@@ -7,9 +7,9 @@
     "methods": [
       {
         "name": "getSimCards",
-        "signature": "() => Promise<SimCardInfo[]>",
+        "signature": "() => Promise<{ simCards: SimCardInfo[]; }>",
         "parameters": [],
-        "returns": "Promise<SimCardInfo[]>",
+        "returns": "Promise<{ simCards: SimCardInfo[]; }>",
         "tags": [],
         "docs": "",
         "complexTypes": [
