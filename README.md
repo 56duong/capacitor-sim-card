@@ -9,12 +9,26 @@ npm install capacitor-sim-card
 npx cap sync
 ```
 
+## Example Usage
+
+```typescript
+import { SimCard, SimCardInfo } from 'capacitor-sim-card';
+
+async function getSimCards() {
+  try {
+    const result = await SimCard.getSimCards();
+    console.log(result);
+  } catch (err) {
+    console.error('Error getting SIM info:', err);
+  }
+}
+```
+
 ## API
 
 <docgen-index>
 
 * [`getSimCards()`](#getsimcards)
-* [`echo(...)`](#echo)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -29,21 +43,6 @@ getSimCards() => Promise<{ simCards: SimCardInfo[]; }>
 ```
 
 **Returns:** <code>Promise&lt;{ simCards: SimCardInfo[]; }&gt;</code>
-
---------------------
-
-
-### echo(...)
-
-```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
-```
-
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 

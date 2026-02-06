@@ -30,5 +30,4 @@ export interface SimCardInfo {
 
 export interface SimCardPlugin {
   getSimCards(): Promise<{ simCards: SimCardInfo[] }>;
-  echo?(options: { value: string }): Promise<{ value: string }>;
 }
