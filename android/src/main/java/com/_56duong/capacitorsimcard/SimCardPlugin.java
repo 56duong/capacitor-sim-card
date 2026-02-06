@@ -25,11 +25,11 @@ import java.util.List;
     permissions = {
         @Permission(
             strings = { Manifest.permission.READ_PHONE_STATE },
-            alias = SimPlugin.READ_PHONE_STATE
+            alias = SimCardPlugin.READ_PHONE_STATE
         ),
         @Permission(
             strings = { Manifest.permission.READ_PHONE_NUMBERS },
-            alias = SimPlugin.READ_PHONE_NUMBERS
+            alias = SimCardPlugin.READ_PHONE_NUMBERS
         )
     }
 )
