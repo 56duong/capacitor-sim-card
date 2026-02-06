@@ -1,0 +1,90 @@
+{
+  "api": {
+    "name": "SimCardPlugin",
+    "slug": "simcardplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "getSimCards",
+        "signature": "() => Promise<GetSimCards>",
+        "parameters": [],
+        "returns": "Promise<GetSimCards>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "GetSimCards"
+        ],
+        "slug": "getsimcards"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "GetSimCards",
+      "slug": "getsimcards",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "simCards",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "SimCardInfo"
+          ],
+          "type": "SimCardInfo[]"
+        }
+      ]
+    },
+    {
+      "name": "SimCardInfo",
+      "slug": "simcardinfo",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "number",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "carrierName",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "isoCountryCode",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "mobileCountryCode",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "mobileNetworkCode",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
