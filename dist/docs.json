@@ -7,38 +7,36 @@
     "methods": [
       {
         "name": "getSimCards",
-        "signature": "() => Promise<GetSimCards>",
+        "signature": "() => Promise<{ simCards: SimCardInfo[]; }>",
         "parameters": [],
-        "returns": "Promise<GetSimCards>",
+        "returns": "Promise<{ simCards: SimCardInfo[]; }>",
         "tags": [],
         "docs": "",
         "complexTypes": [
-          "GetSimCards"
+          "SimCardInfo"
         ],
         "slug": "getsimcards"
+      },
+      {
+        "name": "echo",
+        "signature": "(options: { value: string; }) => Promise<{ value: string; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ value: string; }"
+          }
+        ],
+        "returns": "Promise<{ value: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "echo"
       }
     ],
     "properties": []
   },
   "interfaces": [
-    {
-      "name": "GetSimCards",
-      "slug": "getsimcards",
-      "docs": "",
-      "tags": [],
-      "methods": [],
-      "properties": [
-        {
-          "name": "simCards",
-          "tags": [],
-          "docs": "",
-          "complexTypes": [
-            "SimCardInfo"
-          ],
-          "type": "SimCardInfo[]"
-        }
-      ]
-    },
     {
       "name": "SimCardInfo",
       "slug": "simcardinfo",
@@ -49,37 +47,44 @@
         {
           "name": "number",
           "tags": [],
-          "docs": "",
+          "docs": "Android only: Phone number.",
           "complexTypes": [],
           "type": "string | undefined"
+        },
+        {
+          "name": "allowsVOIP",
+          "tags": [],
+          "docs": "iOS only: If this carrier allows VOIP calls to be made on its network.",
+          "complexTypes": [],
+          "type": "boolean | undefined"
         },
         {
           "name": "carrierName",
           "tags": [],
-          "docs": "",
+          "docs": "The name of the cellular service provider.",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "string"
         },
         {
           "name": "isoCountryCode",
           "tags": [],
-          "docs": "",
+          "docs": "Country code for the cellular service provider,\nrepresented as an ISO 3166-1 country code string.",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "string"
         },
         {
           "name": "mobileCountryCode",
           "tags": [],
-          "docs": "",
+          "docs": "Mobile country code (MCC) for the cellular service provider,\nin its numeric representation.",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "string"
         },
         {
           "name": "mobileNetworkCode",
           "tags": [],
-          "docs": "",
+          "docs": "Mobile network code (MNC) for the cellular service provider,\nin its numeric representation.",
           "complexTypes": [],
-          "type": "string | undefined"
+          "type": "string"
         }
       ]
     }

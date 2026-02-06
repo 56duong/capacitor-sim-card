@@ -14,6 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`getSimCards()`](#getsimcards)
+* [`echo(...)`](#echo)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -24,10 +25,25 @@ npx cap sync
 ### getSimCards()
 
 ```typescript
-getSimCards() => Promise<GetSimCards>
+getSimCards() => Promise<{ simCards: SimCardInfo[]; }>
 ```
 
-**Returns:** <code>Promise&lt;<a href="#getsimcards">GetSimCards</a>&gt;</code>
+**Returns:** <code>Promise&lt;{ simCards: SimCardInfo[]; }&gt;</code>
+
+--------------------
+
+
+### echo(...)
+
+```typescript
+echo(options: { value: string; }) => Promise<{ value: string; }>
+```
+
+| Param         | Type                            |
+| ------------- | ------------------------------- |
+| **`options`** | <code>{ value: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -35,21 +51,15 @@ getSimCards() => Promise<GetSimCards>
 ### Interfaces
 
 
-#### GetSimCards
-
-| Prop           | Type                       |
-| -------------- | -------------------------- |
-| **`simCards`** | <code>SimCardInfo[]</code> |
-
-
 #### SimCardInfo
 
-| Prop                    | Type                |
-| ----------------------- | ------------------- |
-| **`number`**            | <code>string</code> |
-| **`carrierName`**       | <code>string</code> |
-| **`isoCountryCode`**    | <code>string</code> |
-| **`mobileCountryCode`** | <code>string</code> |
-| **`mobileNetworkCode`** | <code>string</code> |
+| Prop                    | Type                 | Description                                                                                       |
+| ----------------------- | -------------------- | ------------------------------------------------------------------------------------------------- |
+| **`number`**            | <code>string</code>  | Android only: Phone number.                                                                       |
+| **`allowsVOIP`**        | <code>boolean</code> | iOS only: If this carrier allows VOIP calls to be made on its network.                            |
+| **`carrierName`**       | <code>string</code>  | The name of the cellular service provider.                                                        |
+| **`isoCountryCode`**    | <code>string</code>  | Country code for the cellular service provider, represented as an ISO 3166-1 country code string. |
+| **`mobileCountryCode`** | <code>string</code>  | Mobile country code (MCC) for the cellular service provider, in its numeric representation.       |
+| **`mobileNetworkCode`** | <code>string</code>  | Mobile network code (MNC) for the cellular service provider, in its numeric representation.       |
 
 </docgen-api>
