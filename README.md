@@ -2,10 +2,17 @@
 
 A Capacitor plugin to retrieve SIM card information.
 
-## Install
+### Latest Version
 
 ```bash
-npm install capacitor-sim-card
+npm install https://github.com/56duong/capacitor-sim-card
+npx cap sync
+```
+
+### Specific Version (v0.0.1)
+
+```bash
+npm install https://github.com/56duong/capacitor-sim-card#v0.0.1
 npx cap sync
 ```
 
@@ -17,7 +24,7 @@ import { SimCard, SimCardInfo } from 'capacitor-sim-card';
 async function getSimCards() {
   try {
     const result = await SimCard.getSimCards();
-    console.log(result);
+    console.log(result);  // [{ number: '+84965661111', carrierName: 'Viettel', isoCountryCode: '452', mobileNetworkCode: '04 }, { number: '+84965669999', carrierName: 'Viettel', isoCountryCode: '452', mobileNetworkCode: '04 }]
   } catch (err) {
     console.error('Error getting SIM info:', err);
   }
